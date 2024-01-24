@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5"
+    android:background="@drawable/page3"
+    tools:context=".page3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_weight="3.5"
+        android:gravity = "center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Soon it was the day of the party."
+            android:textColor="@color/white"
+            android:layout_marginTop="150dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:textSize = "30dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:text="Emman is dressed up and ready"
+            android:id="@+id/hello"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:textSize = "30dp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="His gift was wrapped, and the card was written and sealed."
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:gravity = "center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="139dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="80dp"
+            android:backgroundTint="#11A0ED"
+            android:onClick="goTopage2"
+            android:text="Back"
+            android:textColor="#FFF"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="139dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/back_button"
+            android:backgroundTint="#11A0ED"
+            android:onClick="goTopage4"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>
