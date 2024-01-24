@@ -1,0 +1,38 @@
+package com.example.istorya;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class page2 extends AppCompatActivity {
+    TextView hello;
+    String pangalan;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_page2);
+        hello = findViewById(R.id.hello);
+        Intent i = getIntent();
+        pangalan = getIntent().getStringExtra("name");
+        hello.setText(pangalan + " got an invitation to a birthday dance party.");
+    }
+
+    public void goTopage1(View view) {
+        Intent i = getIntent();
+        Intent intent = new Intent(this, com.example.istorya.page1.class);
+        intent.putExtras(i);
+        startActivity(intent);
+        finish();
+    }
+
+    public void goTopage3(View view) {
+        Intent i = getIntent();
+        Intent intent = new Intent(this, page3.class);
+        intent.putExtras(i);
+        startActivity(intent);
+        finish();
+    }
+}
