@@ -1,43 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/page1"
-    tools:context=".MainActivity">
+package com.example.istorya;
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity = "center"
-        android:orientation="vertical">
+import androidx.appcompat.app.AppCompatActivity;
 
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:padding="10dp"
-            android:layout_marginTop="275dp"
-            android:hint="Enter Name"
-            android:textColorHint="#050000"
-            android:background="#FFFFFF"
-            android:id="@+id/MainCharacter"/>
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="70dp"
-            android:layout_marginBottom="60dp"
-            android:layout_marginTop="250dp"
-            android:backgroundTint="#0288D1"
-            android:textColor="#F8F5F5"
-            android:textStyle="bold"
-            android:text="PROCEED"
-            android:textSize="20dp"
-            android:onClick="goTopage1"/>
+public class MainActivity extends AppCompatActivity {
+    EditText MainCharacter;
+    String pangalan;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        MainCharacter = findViewById(R.id.MainCharacter);
+
+    }
+
+    public void goTopage1(View v) {
+        pangalan = MainCharacter.getText().toString();
+        Intent i = new Intent(this, page1.class);
+        i.putExtra("name", pangalan);
+        startActivity(i);
+        finish();
+    }
 
 
-    </LinearLayout>
+    int j = 1;
 
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (j == 1) {
+            j++;
+            Toast.makeText(this, "Press the back button again to exit.", Toast.LENGTH_SHORT).show();
+        } else {
+            finish();
+        }
+    }
+}
